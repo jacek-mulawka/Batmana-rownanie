@@ -1,0 +1,266 @@
+object Batmana_Rownanie_Form: TBatmana_Rownanie_Form
+  Left = 1076
+  Height = 500
+  Top = 166
+  Width = 500
+  Caption = 'Batmana równanie'
+  ClientHeight = 500
+  ClientWidth = 500
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.0.10.0'
+  object PageControl1: TPageControl
+    Left = 5
+    Height = 300
+    Top = 130
+    Width = 480
+    ActivePage = Wykres_TabSheet
+    TabIndex = 2
+    TabOrder = 0
+    object Ustawienia_TabSheet: TTabSheet
+      Caption = 'Ustawienia'
+      ClientHeight = 272
+      ClientWidth = 472
+      object Rysuj_Button: TButton
+        Left = 5
+        Height = 25
+        Top = 10
+        Width = 75
+        Caption = 'Rysuj'
+        OnClick = Rysuj_ButtonClick
+        TabOrder = 0
+      end
+      object X_Od_FloatSpinEdit: TFloatSpinEdit
+        Left = 50
+        Height = 23
+        Top = 70
+        Width = 100
+        MaxValue = 999999
+        MinValue = -999999
+        TabOrder = 1
+        Value = -7.1
+      end
+      object Y_Od_FloatSpinEdit: TFloatSpinEdit
+        Left = 50
+        Height = 23
+        Top = 105
+        Width = 100
+        MaxValue = 999999
+        MinValue = -999999
+        TabOrder = 2
+        Value = -3
+      end
+      object X_Od_Etykieta_Label: TLabel
+        Left = 10
+        Height = 15
+        Top = 70
+        Width = 24
+        Caption = 'Od x'
+        ParentColor = False
+      end
+      object Y_Od_Etykieta_Label: TLabel
+        Left = 10
+        Height = 15
+        Top = 100
+        Width = 25
+        Caption = 'Od y'
+        ParentColor = False
+      end
+      object X_Skok_FloatSpinEdit: TFloatSpinEdit
+        Left = 55
+        Height = 23
+        Top = 145
+        Width = 100
+        DecimalPlaces = 4
+        MaxValue = 999999
+        MinValue = 1E-7
+        TabOrder = 3
+        Value = 0.01
+      end
+      object Y_Skok_FloatSpinEdit: TFloatSpinEdit
+        Left = 55
+        Height = 23
+        Top = 180
+        Width = 100
+        DecimalPlaces = 4
+        MaxValue = 999999
+        MinValue = 1E-7
+        TabOrder = 4
+        Value = 0.01
+      end
+      object X_Skok_Etykieta_Label: TLabel
+        Left = 10
+        Height = 15
+        Top = 145
+        Width = 33
+        Caption = 'Skok x'
+        ParentColor = False
+      end
+      object Y_Skok_Etykieta_Label: TLabel
+        Left = 10
+        Height = 15
+        Top = 175
+        Width = 34
+        Caption = 'Skok y'
+        ParentColor = False
+      end
+      object ProgressBar1: TProgressBar
+        Left = 0
+        Height = 20
+        Top = 252
+        Width = 472
+        Align = alBottom
+        Step = 1
+        TabOrder = 5
+      end
+      object Postep_Label: TLabel
+        Left = 0
+        Height = 15
+        Top = 237
+        Width = 472
+        Align = alBottom
+        Caption = 'Postęp: oczekiwanie.'
+        ParentColor = False
+      end
+    end
+    object Obraz_TabSheet: TTabSheet
+      Caption = 'Obraz'
+      ClientHeight = 272
+      ClientWidth = 472
+      object Obraz_Image: TImage
+        Left = 0
+        Height = 272
+        Top = 0
+        Width = 472
+        Align = alClient
+      end
+    end
+    object Wykres_TabSheet: TTabSheet
+      Caption = 'Wykres'
+      ClientHeight = 272
+      ClientWidth = 472
+      object Wykres_Chart: TChart
+        Left = 0
+        Height = 272
+        Top = 0
+        Width = 472
+        AxisList = <        
+          item
+            Grid.Color = clDefault
+            Marks.LabelFont.Color = clWhite
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelFont.Orientation = 900
+            Title.LabelBrush.Style = bsClear
+          end        
+          item
+            Grid.Color = clDefault
+            Alignment = calBottom
+            Marks.LabelFont.Color = clWhite
+            Marks.LabelBrush.Style = bsClear
+            Minors = <>
+            Title.LabelBrush.Style = bsClear
+          end>
+        BackColor = clBlack
+        Foot.Brush.Color = clBtnFace
+        Foot.Font.Color = clBlue
+        Title.Brush.Color = clBtnFace
+        Title.Font.Color = clBlue
+        Title.Text.Strings = (
+          'TAChart'
+        )
+        Align = alClient
+        Color = clBlack
+        object Wykres_ChartLineSeries1: TLineSeries
+          Legend.Visible = False
+          LineType = ltNone
+          Pointer.Brush.Color = clYellow
+          Pointer.Pen.Color = clYellow
+          Pointer.Style = psDiamond
+          Pointer.Visible = True
+          ShowPoints = True
+        end
+      end
+    end
+    object GLScene_TabSheet: TTabSheet
+      Caption = 'GLScene'
+      ClientHeight = 272
+      ClientWidth = 472
+      object GLSceneViewer1: TGLSceneViewer
+        Left = 0
+        Height = 272
+        Top = 0
+        Width = 472
+        Camera = GLCamera1
+        Buffer.AmbientColor.Red = 0.200000002980232
+        Buffer.AmbientColor.Green = 0.200000002980232
+        Buffer.AmbientColor.Blue = 0.200000002980232
+        Buffer.AmbientColor.Alpha = 1
+        FieldOfView = 139.628402709961
+        Align = alClient
+        TabOrder = 0
+      end
+    end
+  end
+  object GLScene1: TGLScene
+    Left = 20
+    Top = 25
+    object GLCamera1: TGLCamera
+      DepthOfView = 100
+      FocalLength = 50
+      Position.Coordinates = {
+        0000000000000000000050C10000803F
+      }
+      Direction.Coordinates = {
+        00000000000000000000803F00000000
+      }
+    end
+    object GLLightSource1: TGLLightSource
+      Ambient.Alpha = 1
+      ConstAttenuation = 1
+      Diffuse.Red = 1
+      Diffuse.Green = 1
+      Diffuse.Blue = 1
+      Diffuse.Alpha = 1
+      Position.Coordinates = {
+        00000000000000000000C8C20000803F
+      }
+      Specular.Alpha = 1
+      SpotCutOff = 180
+    end
+    object Zero_GLSphere: TGLSphere
+      Material.BackProperties.Ambient.Red = 0.200000002980232
+      Material.BackProperties.Ambient.Green = 0.200000002980232
+      Material.BackProperties.Ambient.Blue = 0.200000002980232
+      Material.BackProperties.Ambient.Alpha = 1
+      Material.BackProperties.Diffuse.Red = 0.800000011920929
+      Material.BackProperties.Diffuse.Green = 0.800000011920929
+      Material.BackProperties.Diffuse.Blue = 0.800000011920929
+      Material.BackProperties.Diffuse.Alpha = 1
+      Material.BackProperties.Emission.Alpha = 1
+      Material.BackProperties.Specular.Alpha = 1
+      Material.FrontProperties.Ambient.Red = 0.200000002980232
+      Material.FrontProperties.Ambient.Green = 0.200000002980232
+      Material.FrontProperties.Ambient.Blue = 0.200000002980232
+      Material.FrontProperties.Ambient.Alpha = 1
+      Material.FrontProperties.Diffuse.Red = 0.800000011920929
+      Material.FrontProperties.Diffuse.Green = 0.800000011920929
+      Material.FrontProperties.Diffuse.Blue = 0.800000011920929
+      Material.FrontProperties.Diffuse.Alpha = 1
+      Material.FrontProperties.Emission.Alpha = 1
+      Material.FrontProperties.Specular.Alpha = 1
+      Position.Coordinates = {
+        0000E04000000000000000000000803F
+      }
+      Radius = 0.5
+    end
+    object Punkty_GLDummyCube: TGLDummyCube
+      CubeSize = 1
+      EdgeColor.Red = 1
+      EdgeColor.Green = 1
+      EdgeColor.Blue = 1
+      EdgeColor.Alpha = 1
+    end
+  end
+end
