@@ -31,6 +31,7 @@ type
 
   TBatmana_Rownanie_Form = class(TForm)
     GLCamera1: TGLCamera;
+    Logo_Image: TImage;
     Obraz_Image: TImage;
     Postep_Label: TLabel;
     Punkty_GLDummyCube: TGLDummyCube;
