@@ -1,6 +1,9 @@
 # Batmana-równanie
 Znak Batmana rysowany na podstawie równania.
 
+
+## English
+
 Batman sign drawn from an equation.
 
 <img src="https://github.com/jacek-mulawka/Batmana-rownanie/blob/main/Gallery/Batmana%20r%C3%B3wnanie%2001.jpg">
